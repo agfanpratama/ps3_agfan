@@ -1,0 +1,24 @@
+data_agfan=read.delim("clipboard")
+View(data_agfan)
+agfan <- data_agfan[data_agfan$Bedrooms==2,]  
+View(agfan)
+agfan$Bathrooms <- ifelse(agfan$Bathrooms > 2, c("large"), c("small"))
+View(agfan)
+agfan$newvariable <- ifelse(agfan$Offers > 2, c("large"), c("small")) 
+View(agfan)
+agfan$newvariable <- agfan$Price/agfan$SqFt
+View(agfan)
+agfan$newvariable<-NULL
+View(agfan)
+data_agfan.kolom1dan2 <- data_agfan[,1:2] 
+View(data_agfan.kolom1dan2)
+data_agfan.kolom3dan4 <- data_agfan[,3:4] 
+View(data_agfan.kolom3dan4)
+data_agfan.kolom1sd4<-cbind(data_agfan.kolom1dan2, data_agfan.kolom3dan4) 
+View(data_agfan.kolom1sd4)
+data_agfan.baris1sd3 <- data_agfan[1:3,] 
+data_agfan.baris4sd6 <- data_agfan[4:6,] 
+data_agfan.baris1sd6 <- rbind(data_agfan.baris1sd3, data_agfan.baris4sd6) 
+View(data_agfan.baris1sd6)
+data_agfan.sort<-data_agfan[order(data_agfan$Price),] 
+View(data_agfan.sort)

@@ -1,0 +1,41 @@
+# READ CSV
+data_agfan=read.csv("C:/Users/user/Documents/Mata Kuliah/PRAK STATISTIKA/data_agfan.csv")
+View(data_agfan)
+
+# SUBSET DATA
+agfan <- data_agfan[data_agfan$tinggi.badan==160,]
+View(agfan)
+
+# MENGUBAH NILAI SUATU VARIABEL
+data_agfan$tinggi.badan <- ifelse(data_agfan$tinggi.badan > 160,c("tinggi"),c("pendek"))
+View(agfan)
+
+# MENAMBAH  VARIABEL
+data_agfan$Jurusan <- c("Infor20")
+data_agfan$Fakultas<- c(“FTI”)
+View(data_agfan)
+
+# DELETE VARIABEL
+data_agfan$Fakultas<-NULL
+View(data_agfan)
+
+# MERGE DATA FRAME
+data_agfan.namagen <- data_agfan[1:2]
+View(data_agfan.namagen)
+data_agfan.namagen1 <- data_agfan[3:4]
+View(data_agfan.namagen1)
+data_agfan.gabungan<-cbind(data_agfan.namagen,data_agfan.namagen1)
+View(data_agfan.gabungan)
+
+# MERGE BARIS
+data_baris_agfan.1sampai5<-data_agfan[1:5,]
+View(data_baris_agfan.1sampai5)
+data_baris_agfan.25sampai30<-data_agfan[25:30,]
+View(data_baris_agfan.25sampai30)
+data_baris_agfan.gabungan<-
+  rbind(data_baris_agfan1sampai5,data_baris_agfan.25sampai30)
+View(data_baris_agfan.gabungan)
+
+# SORTING DATA
+data_agfan.sort<-data_agfan[order(data_agfan$waktu.perjalanan),]
+View(data_agfan.sort)
